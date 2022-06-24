@@ -10,7 +10,9 @@ sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 # Instando los software necesarios para probar el concepto.
-sudo yum update && sudo yum install -y htop nmap git httpd
+sudo yum update && sudo yum install -y htop nmap git httpd mod_ssl
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install -y certbot
 
 # Instalando la versión sdkman y java
 curl -s "https://get.sdkman.io" | bash
@@ -19,3 +21,5 @@ sdk install java
 
 # Subiendo el servicio de Apache.
 sudo systemctl start httpd
+
+# Insta
