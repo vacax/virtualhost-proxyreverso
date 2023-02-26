@@ -11,6 +11,8 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 # Instando los software necesarios para probar el concepto.
 sudo yum update -y && sudo yum install -y htop nmap git httpd mod_ssl tree
+
+# Dependencias necesarias para instalar cerbort
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum install -y certbot
 
@@ -32,7 +34,7 @@ echo "Aplicacion #2" | sudo tee /var/www/html/app2/index.html
 # Donde dice cambiar sustituir.
 cd ~/
 git clone https://github.com/vacax/virtualhost-proxyreverso && cd virtualhost-proxyreverso
-cp configuraciones/*.conf /etc/httpd/conf.d/
+sudo cp configuraciones/*.conf /etc/httpd/conf.d/
 
 # Clonando el proyecto de Javalin-demo e iniciando la aplicación, escuchando en el puerto 7000
 cd ~/
