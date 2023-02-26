@@ -24,13 +24,18 @@ sudo systemctl start httpd
 
 # Creando las carpetas necesarias para el ejemplo de virtualhost
 sudo mkdir /var/www/html/app1 /var/www/html/app2
-sudo echo "Aplicacion #1" >  /var/www/html/app1/index.html
-sudo echo "Aplicacion #2" >  /var/www/html/app2/index.html
+echo "Aplicacion #1" | sudo tee /var/www/html/app1/index.html
+echo "Aplicacion #2" | sudo tee /var/www/html/app2/index.html
 
+# Clonando el proyecto de virtualhost-proxyreverso y copiando los archivos importantes.
+# Una vez compiado, si es reiniciado el servicio de apache, deberá configurar los nuevos archivos creados.
+# Donde dice cambiar sustituir.
 cd ~/
 git clone https://github.com/vacax/virtualhost-proxyreverso && cd virtualhost-proxyreverso
 cp configuraciones/*.conf /etc/httpd/conf.d/
 
-# Clonando el proyecto de Javalin-demo y Orm-JPA
+# Clonando el proyecto de Javalin-demo e iniciando la aplicación, escuchando en el puerto 7000
 cd ~/
-git clone https://github.com/vacax/javalin-demo/ && cd javalin-demo && ./gradlew shadowjar && java -jar build/libs/app.jar > salida.txt 2> error.txt &
+git clone https://github.com/vacax/javalin-demo/ && cd javalin-demo && bash start.sh &
+curl localhost:7000
+echo "Script completado!..."
