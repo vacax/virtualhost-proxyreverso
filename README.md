@@ -34,3 +34,18 @@ free
 
 En este punto tenemos disponible todas las herramientas necesarias instaladas.
 
+**Configurando Virtualhost**
+
+Es necesario contar con un servicio DNS, para poder registrar los registro tipo A, 
+apuntando a la dirección IP de la máquina asignada en Amazon. En el archivo ``virtualhost.conf`` 
+en la ruta de ``/etc/httpd/conf.d/``, deben cambio el valor ``CAMBIAR`` por la IP, ver imagenes.
+
+![amazon-ip](imagenes/ip-amazo.png)
+
+![archivo virtual host](imagenes/virtualhost.png)
+
+Una vez modificado ejecutar el comando: 
+```
+sudo service httpd reload
+```
+
