@@ -3,7 +3,7 @@
 En una instancia basada en Amazon Linux, clonar el proyecto actual y ejecutar los siguientes comandos para instalación básica:
 
 `
-wget https://raw.githubusercontent.com/vacax/virtualhost-proxyreverso/master/basico.sh && chmod +x basico.sh && bash basico.sh && git clone https://github.com/vacax/virtualhost-proxyreverso && cd virtualhost-proxyreverso
+wget https://raw.githubusercontent.com/vacax/virtualhost-proxyreverso/master/basico.sh && chmod +x basico.sh && bash basico.sh
 `
 
 Una vez terminado el script, salga de la terminar y vuelva a conectarse. Validar que los siguientes comandos:
