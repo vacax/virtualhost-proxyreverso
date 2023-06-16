@@ -10,7 +10,7 @@ sudo cp /etc/fstab /etc/fstab.bak
 echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 # Instando los software necesarios para probar el concepto.
-sudo apt update && sudo apt -y install nmap apache2 certbot mod_ssl
+sudo apt update && sudo apt -y install zip unzip nmap apache2 certbot mod_ssl
 
 # Instalando la versión sdkman y java
 curl -s "https://get.sdkman.io" | bash
