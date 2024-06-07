@@ -17,7 +17,7 @@ curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Utilizando la versión de java 17 como base.
-sdk install java 17.0.9-tem
+sdk install java 21.0.3-tem
 
 # Subiendo el servicio de Apache.
 sudo service apache2 start
